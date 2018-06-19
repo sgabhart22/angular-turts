@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
+
 import { Turtle } from '../turtle';
+import { AddDialogComponent } from '../add-dialog/add-dialog.component';
+
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { MdcDialog, 
@@ -29,32 +32,9 @@ export class TurtlesComponent implements OnInit {
   }
 
   openDialog() {
-  const dialogRef = this.dialog.open(AddDialog, {
+  const dialogRef = this.dialog.open(AddDialogComponent, {
       escapeToClose: this.escapeToClose,
 	  clickOutsideToClose: this.clickOutsideToClose,
     });
   }
-}
-
-@Component({
-  template: `
-    <mdc-dialog>
-    <mdc-dialog-header>
-      <mdc-dialog-header-title>
-		Template for turt additions
-      </mdc-dialog-header-title>
-    </mdc-dialog-header>
-    <mdc-dialog-body>
-		Simple dialog skeleton works!
-    </mdc-dialog-body>
-    <mdc-dialog-footer>
-      <button mdc-dialog-button [cancel]="true">Cancel</button>
-      <button mdc-dialog-button [accept]="true">Submit</button>
-    </mdc-dialog-footer>
-  </mdc-dialog>
-  `,
-})
-export class AddDialog {
-  constructor(public dialogRef: MdcDialogRef<AddDialog>,
-  			  @Inject(MDC_DIALOG_DATA) public data: any) { }
 }

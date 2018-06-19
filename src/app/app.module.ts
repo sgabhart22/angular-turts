@@ -7,7 +7,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { TurtlesComponent, AddDialog } from './turtles/turtles.component';
+import { TurtlesComponent } from './turtles/turtles.component';
 import { MdcCardModule,
 		 MdcIconModule,
 		 MdcIconButtonModule,
@@ -16,13 +16,14 @@ import { MdcCardModule,
 		 MdcFabModule,
 		 MdcDialogModule } from '@angular-mdc/web';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TurtlesComponent,
 	NavbarComponent,
-	AddDialog
+	AddDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 	MdcDialogModule
   ],
   providers: [],
-  entryComponents: [AddDialog],
+  entryComponents: [AddDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
