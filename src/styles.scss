@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+$mdc-theme-primary: #26C6DA;
+$mdc-theme-secondary: #FFA726;
+$mdc-theme-background: #fff;
+$mdc-theme-text-icon-on-background: #FFA726;
+
+@import "~@angular-mdc/theme/material";
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+// Card Styles
+
+img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+.turt-card {
+  width: auto;
+  margin: 28px;
+}
+
+.turt-card__primary {
+  padding: 1rem;
+}
+
+.turt-card__title {
+  margin: 0;
+}
+
+.turt-card__subtitle {
+  @include mdc-theme-prop(color, text-secondary-on-background);
+
+  margin: 0;
+}
+
+.turt-card__secondary {
+  @include mdc-theme-prop(color, text-secondary-on-background);
+
+  padding: 1rem;
+}
+
+.mdc-icon-button {
+  @include mdc-icon-button-ink-color(secondary);
+
+  color: $mdc-theme-secondary !important;
+}
+
+.mdc-card__action--icon {
+  // This mixin is needed to designate ripple color on non-button icons
+  @include mdc-states-base-color(secondary);
+
+  color: $mdc-theme-secondary !important;
+}
+
+// Nav bar
+.mdc-app-bar {
+  @include mdc-top-app-bar-fill-color-accessible(primary);
+}

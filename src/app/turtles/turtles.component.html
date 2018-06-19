@@ -1,0 +1,33 @@
+<h3>Test Turt Card</h3>
+<hr>
+<div class="mdc-layout-grid">
+<div class="mdc-layout-grid__inner">
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4" *ngFor="let turtle of turtlesObservable | async">
+		<mdc-card class="turt-card">
+			<mdc-card-primary-action mdc-ripple>
+			<mdc-card-media>
+			<img src="{{turtle.url}}">
+			</mdc-card-media>
+			<div class="turt-card__primary">
+			<h2 class="turt-card__title" mdcHeadline6>{{turtle.name}}</h2>
+			<h3 class="turt-card__subtitle" mdcSubtitle2>{{turtle.class}}</h3>
+			</div>
+			<div class="turt-card__secondary" mdcBody2>
+				{{turtle.description}}
+			</div>
+			</mdc-card-primary-action>
+			<mdc-card-actions [icons]="true" [buttons]="false">
+			<mdc-card-action-icons>
+			<button class="action-icon" mdcIconButton mdcCardAction="icon" iconOn="favorite" iconOff="favorite_border"></button>
+			<mdc-icon mdcCardAction="icon" mdcRipple>share</mdc-icon>
+			<mdc-icon mdcCardAction="icon" mdcRipple>more_vert</mdc-icon>
+			</mdc-card-action-icons>
+			</mdc-card-actions>
+		</mdc-card>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button mdc-fab position='bottom-right' (click)="openDialog()">
+	<mdc-icon>add</mdc-icon>
+</button>
