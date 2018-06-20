@@ -10,6 +10,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+// Drawer
+.turt-drawer {
+  @include mdc-drawer-header_();
+}
+
 // Card Styles
 
 img {

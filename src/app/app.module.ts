@@ -14,7 +14,9 @@ import { MdcCardModule,
 		 MdcRippleModule,
 		 MdcAppBarModule,
 		 MdcFabModule,
-		 MdcDialogModule } from '@angular-mdc/web';
+		 MdcDialogModule,
+		 MdcDrawerModule,
+		 MdcListModule } from '@angular-mdc/web';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
@@ -36,7 +38,9 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
 	MdcRippleModule,
 	MdcAppBarModule,
 	MdcFabModule,
-	MdcDialogModule
+	MdcDialogModule,
+	MdcDrawerModule,
+	MdcListModule
   ],
   providers: [],
   entryComponents: [AddDialogComponent],

@@ -1,8 +1,34 @@
-<mdc-app-bar [fixed]="true">
+<mdc-app-bar #appbar [fixed]="true">
 <mdc-app-bar-row>
 <mdc-app-bar-section align="start">
-	<mdc-icon mdcAppBarNavIcon>menu</mdc-icon>
+	<mdc-icon mdcAppBarNavIcon (click)="appdrawer.open()">menu</mdc-icon>
 	<mdc-app-bar-title>{{title}}</mdc-app-bar-title>
 </mdc-app-bar-section>
 </mdc-app-bar-row>
 </mdc-app-bar>
+
+<mdc-drawer class="turt-drawer" #appdrawer="mdcDrawer" drawer='temporary' [closeOnClick]="false">
+<mdc-drawer-header>
+	<mdc-drawer-header-content>
+		Quick Turt Navigation
+	</mdc-drawer-header-content>
+</mdc-drawer-header>
+	<mdc-drawer-content>
+		<mdc-list-group>
+		<mdc-list>
+			<mdc-list-item>
+			<mdc-icon mdc-list-item-graphic>home</mdc-icon>Home
+			</mdc-list-item>
+			<mdc-list-divider></mdc-list-divider>
+			<mdc-list-item>
+			<mdc-icon mdc-list-item-graphic>track_changes</mdc-icon>
+			New Turtles
+			</mdc-list-item>
+			<mdc-list-divider></mdc-list-divider>
+			<mdc-list-item>
+			<mdc-icon mdc-list-item-graphic>stars</mdc-icon>Favorites
+			</mdc-list-item>
+		</mdc-list>
+		</mdc-list-group>
+	</mdc-drawer-content>
+</mdc-drawer>
