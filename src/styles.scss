@@ -64,3 +64,8 @@ img {
 .mdc-app-bar {
   @include mdc-top-app-bar-fill-color-accessible(primary);
 }
+
+// Dialog
+.mdc-dialog__action {
+  @include mdc-states-base-color(secondary);
+}
