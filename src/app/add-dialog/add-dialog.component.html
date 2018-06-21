@@ -1,14 +1,18 @@
 <mdc-dialog>
   <mdc-dialog-header>
     <mdc-dialog-header-title>
-	  Template for turt additions
+	  Early form for turt additions
     </mdc-dialog-header-title>
   </mdc-dialog-header>
   <mdc-dialog-body>
-    Simple dialog skeleton works!
+    <form [formGroup]="addForm" id="addForm" (ngSubmit)="updateForm()">
+	  <mdc-text-field #inputName formControlName="name" label="Turtle Name" [required]="true"></mdc-text-field>
+	  <mdc-text-field-helper-text [validation]="true" [persistent]="false">
+	    Turtle name is required</mdc-text-field-helper-text>
+	</form>
   </mdc-dialog-body>
   <mdc-dialog-footer>
     <button mdc-dialog-button [cancel]="true">Cancel</button>
-    <button mdc-dialog-button [accept]="true">Submit</button>
+    <button mdc-dialog-button [action]="true" [focused]="true" type="submit" form="addForm">Submit</button>
   </mdc-dialog-footer>
 </mdc-dialog>
