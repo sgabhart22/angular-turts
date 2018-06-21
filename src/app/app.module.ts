@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,7 +17,9 @@ import { MdcCardModule,
 		 MdcFabModule,
 		 MdcDialogModule,
 		 MdcDrawerModule,
-		 MdcListModule } from '@angular-mdc/web';
+		 MdcListModule,
+		 MdcFormFieldModule,
+		 MdcTextFieldModule } from '@angular-mdc/web';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
@@ -32,6 +35,8 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
     AngularFireModule.initializeApp(environment.firebase),
 	AngularFireDatabaseModule,
 	AngularFireAuthModule,
+	FormsModule,
+	ReactiveFormsModule,
 	MdcCardModule,
 	MdcIconModule,
 	MdcIconButtonModule,
@@ -40,7 +45,9 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
 	MdcFabModule,
 	MdcDialogModule,
 	MdcDrawerModule,
-	MdcListModule
+	MdcListModule,
+	MdcFormFieldModule,
+	MdcTextFieldModule
   ],
   providers: [],
   entryComponents: [AddDialogComponent],
