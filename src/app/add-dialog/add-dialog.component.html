@@ -5,8 +5,8 @@
     </mdc-dialog-header-title>
   </mdc-dialog-header>
   <mdc-dialog-body>
-    <form [formGroup]="addForm" id="addForm" (ngSubmit)="updateForm()">
-	  <mdc-text-field #inputName formControlName="name" label="Turtle Name" [required]="true"></mdc-text-field>
+    <form [formGroup]="addForm" id="addForm" (ngSubmit)="onSubmit()">
+	  <mdc-text-field #inputName formControlName="inputName" label="Turtle Name" [required]="true"></mdc-text-field>
 	  <mdc-text-field-helper-text [validation]="true" [persistent]="false">
 	    Turtle name is required</mdc-text-field-helper-text>
 	</form>

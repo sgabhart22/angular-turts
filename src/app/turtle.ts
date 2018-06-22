@@ -1,6 +1,10 @@
 export class Turtle {
-  name: string;
-  class: string;
-  description: string;
-  img: any;
+
+  constructor (
+    public name: string,
+    public subclass: string,
+    public description: string,
+	public url: any
+  ) { }
+  
 }

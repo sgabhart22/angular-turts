@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Turtle } from '../turtle';
 
 import { MdcDialog, 
 		 MdcDialogComponent, 
@@ -14,14 +15,15 @@ import { MdcDialog,
 })
 export class AddDialogComponent implements OnInit {
   addForm: FormGroup;
-  @ViewChild('nameInput') nameInput: MdcTextField;
+  submitted = false;
+  @ViewChild('inputName') inputName: MdcTextField;
 
   constructor(public dialogRef: MdcDialogRef<AddDialogComponent>,
   			  @Inject(MDC_DIALOG_DATA) public data: any) { }
 			  
   ngOnInit() { 
     this.addForm = new FormGroup({
-	  name: new FormControl({ value: '', disabled: false }, Validators.required)
+	  inputName: new FormControl({ value: '', disabled: false }, Validators.required)
 	});
   }
 
@@ -30,14 +32,22 @@ export class AddDialogComponent implements OnInit {
   }
 
   updateForm() {
-    if(!this.addForm.valid) {
-	  if(!this.nameInput.valid) {
-	    this.nameInput.setValid(false);
-	  }
-
-	  return;
-	}
-
+    this.submitted = true;
 	this.closeDialog();
-	} // updateForm
+  } // updateForm
+				
+	onSubmit() {
+	  if(!this.addForm.valid) {
+	    if(!this.inputName.valid) {
+		  this.inputName.setValid(false);
+		}
+		return;
+	  }		
+			
+	  
+	
+	  this.submitted = true;
+	  this.closeDialog();
+	}
+				 
 }
