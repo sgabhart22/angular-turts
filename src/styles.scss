@@ -77,3 +77,6 @@ img {
   @include mdc-text-field-ink-color(text-secondary-on-background); 
 }
 
+.mdc-text-field--textarea {
+  @include mdc-text-field-textarea-stroke-color(primary); 
+}
