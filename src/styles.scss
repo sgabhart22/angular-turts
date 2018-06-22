@@ -69,3 +69,11 @@ img {
 .mdc-dialog__action {
   @include mdc-states-base-color(secondary);
 }
+
+.mdc-text-field {
+  @include mdc-text-field-bottom-line-color(primary);
+  @include mdc-text-field-label-color(secondary);
+
+  @include mdc-text-field-ink-color(text-secondary-on-background); 
+}
+
