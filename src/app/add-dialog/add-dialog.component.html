@@ -5,10 +5,19 @@
     </mdc-dialog-header-title>
   </mdc-dialog-header>
   <mdc-dialog-body>
-    <form [formGroup]="addForm" id="addForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addForm" id="addForm" (ngSubmit)="onSubmit()" autocomplete="off">
 	  <mdc-text-field #inputName formControlName="inputName" label="Turtle Name" [required]="true"></mdc-text-field>
 	  <mdc-text-field-helper-text [validation]="true" [persistent]="false">
-	    Turtle name is required</mdc-text-field-helper-text>
+	  Turtle name is required</mdc-text-field-helper-text>
+	  <mdc-text-field #inputClass formControlName="inputClass" label="Turtle Class" [required]="true"></mdc-text-field>
+	  <mdc-text-field-helper-text [validation]="true" [persistent]="false">
+	  Turtle class is required
+	  </mdc-text-field-helper-text>
+	  <mdc-textarea #inputDesc formControlName="inputDesc" label="Description" [required]="true"></mdc-textarea><br />
+	  <mdc-text-field #inputUrl formControlName="inputUrl" label="Image Link" [required]="true"></mdc-text-field>
+	  <mdc-text-field-helper-text [validation]="true" [persistent]="false">
+	  A link to the turtle image must be provided
+	  </mdc-text-field-helper-text>
 	</form>
   </mdc-dialog-body>
   <mdc-dialog-footer>
