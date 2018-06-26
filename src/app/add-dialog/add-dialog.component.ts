@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Turtle } from '../turtle';
+import { TurtleService } from '../turtles/turtle.service';
 
 import { MdcDialog, 
 		 MdcDialogComponent, 
@@ -10,6 +11,7 @@ import { MdcDialog,
 		 
 @Component({
   selector: 'app-add-dialog',
+  providers: [TurtleService],
   templateUrl: './add-dialog.component.html',
   styleUrls: ['./add-dialog.component.scss']
 })
@@ -23,7 +25,8 @@ export class AddDialogComponent implements OnInit {
   @ViewChild('inputUrl') inputUrl: MdcTextField;
 
   constructor(public dialogRef: MdcDialogRef<AddDialogComponent>,
-  			  @Inject(MDC_DIALOG_DATA) public data: any) { }
+			  @Inject(MDC_DIALOG_DATA) public data: any,
+  			 private turtleService: TurtleService) { }
 			  
   ngOnInit() {
     this.addForm = new FormGroup({
@@ -66,8 +69,11 @@ export class AddDialogComponent implements OnInit {
 	  var mDesc = this.inputDesc.getValue();
 	  var mUrl = this.inputUrl.getValue();
 
+	
 	  var mTurtle = new Turtle(mName, mClass, mDesc, mUrl);
 	  console.log(JSON.stringify(mTurtle));
+
+	  this.turtleService.addTurtle(mTurtle);
 
 	  this.submitted = true;
 	  this.closeDialog();
