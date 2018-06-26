@@ -19,13 +19,13 @@ export class AddDialogComponent implements OnInit {
 
   @ViewChild('inputName') inputName: MdcTextField;
   @ViewChild('inputClass') inputClass: MdcTextField;
-  @ViewChild('inputDesc') inputDesc: MdcTextArea;
+  @ViewChild('inputDesc') inputDesc: MdcTextField;
   @ViewChild('inputUrl') inputUrl: MdcTextField;
 
   constructor(public dialogRef: MdcDialogRef<AddDialogComponent>,
   			  @Inject(MDC_DIALOG_DATA) public data: any) { }
 			  
-  ngOnInit() { 
+  ngOnInit() {
     this.addForm = new FormGroup({
 		inputName: new FormControl({ value: '', disabled: false }, Validators.required),
 		inputClass: new FormControl({ value: '', disabled: false }, Validators.required),
