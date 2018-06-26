@@ -15,4 +15,16 @@ export class TurtleService {
   getTurtles(): Observable<any[]> {
     return this.db.list(this.path).valueChanges();
   }
+
+  addTurtle(turtle: Turtle) {
+	const turtRef = this.db.object(this.path + '/' + turtle.name);
+	console.log('Object binding created.');
+	
+	turtRef.set({
+	  name: turtle.name,
+	  class: turtle.subclass,
+	  description: turtle.description,
+	  url: turtle.url
+	});
+  }
 }
