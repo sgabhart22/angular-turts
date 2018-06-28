@@ -19,7 +19,8 @@ import { MdcCardModule,
 		 MdcDrawerModule,
 		 MdcListModule,
 		 MdcFormFieldModule,
-		 MdcTextFieldModule } from '@angular-mdc/web';
+		 MdcTextFieldModule,
+		 MdcSnackbarModule} from '@angular-mdc/web';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
@@ -47,7 +48,8 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
 	MdcDrawerModule,
 	MdcListModule,
 	MdcFormFieldModule,
-	MdcTextFieldModule
+	MdcTextFieldModule,
+	MdcSnackbarModule
   ],
   providers: [],
   entryComponents: [AddDialogComponent],

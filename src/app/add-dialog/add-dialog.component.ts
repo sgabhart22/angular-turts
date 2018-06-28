@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Turtle } from '../turtle';
 import { TurtleService } from '../turtles/turtle.service';
+import { SnackbarService } from '../snackbar.service';
 
 import { MdcDialog, 
 		 MdcDialogComponent, 
@@ -11,7 +12,7 @@ import { MdcDialog,
 		 
 @Component({
   selector: 'app-add-dialog',
-  providers: [TurtleService],
+  providers: [TurtleService, SnackbarService],
   templateUrl: './add-dialog.component.html',
   styleUrls: ['./add-dialog.component.scss']
 })
@@ -26,7 +27,8 @@ export class AddDialogComponent implements OnInit {
 
   constructor(public dialogRef: MdcDialogRef<AddDialogComponent>,
 			  @Inject(MDC_DIALOG_DATA) public data: any,
-  			 private turtleService: TurtleService) { }
+		      private turtleService: TurtleService,
+  			  private snackbarService: SnackbarService) { }
 			  
   ngOnInit() {
     this.addForm = new FormGroup({
@@ -77,6 +79,7 @@ export class AddDialogComponent implements OnInit {
 
 	  this.submitted = true;
 	  this.closeDialog();
+      this.snackbarService.show();
 	}
 				 
 }
