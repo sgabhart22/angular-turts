@@ -24,7 +24,8 @@ export class TurtleService {
 	  name: turtle.name,
 	  class: turtle.subclass,
 	  description: turtle.description,
-	  url: turtle.url
+	  url: turtle.url,
+	  favorite: turtle.favorite
 	});
   }
 }

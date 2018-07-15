@@ -70,9 +70,9 @@ export class AddDialogComponent implements OnInit {
 	  var mClass = this.inputClass.getValue();
 	  var mDesc = this.inputDesc.getValue();
 	  var mUrl = this.inputUrl.getValue();
-
+	  var mFav = false;
 	
-	  var mTurtle = new Turtle(mName, mClass, mDesc, mUrl);
+	  var mTurtle = new Turtle(mName, mClass, mDesc, mUrl, mFav);
 	  console.log(JSON.stringify(mTurtle));
 
 	  this.turtleService.addTurtle(mTurtle);

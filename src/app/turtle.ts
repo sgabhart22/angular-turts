@@ -4,7 +4,8 @@ export class Turtle {
     public name: string,
     public subclass: string,
     public description: string,
-	public url: any
+	public url: any,
+	public favorite: boolean
   ) { }
   
 }
