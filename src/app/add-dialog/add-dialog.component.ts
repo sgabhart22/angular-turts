@@ -20,10 +20,10 @@ export class AddDialogComponent implements OnInit {
   addForm: FormGroup;
   submitted = false;
 
-  @ViewChild('inputName') inputName: MdcTextField;
-  @ViewChild('inputClass') inputClass: MdcTextField;
-  @ViewChild('inputDesc') inputDesc: MdcTextField;
-  @ViewChild('inputUrl') inputUrl: MdcTextField;
+  @ViewChild('inputName', {static: true}) inputName: MdcTextField;
+  @ViewChild('inputClass', {static: true}) inputClass: MdcTextField;
+  @ViewChild('inputDesc', {static: true}) inputDesc: MdcTextField;
+  @ViewChild('inputUrl', {static: true}) inputUrl: MdcTextField;
 
   constructor(public dialogRef: MdcDialogRef<AddDialogComponent>,
 			  @Inject(MDC_DIALOG_DATA) public data: any,
